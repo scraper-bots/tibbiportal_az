@@ -123,7 +123,7 @@ class TibbiPortalScraper:
                     details['specialty'] = text
                 elif 'fa-calendar' in icon_class:
                     details['experience'] = text
-                elif 'fa-mobile' in icon_class:
+                elif 'fa-phone' in icon_class or 'fa-mobile' in icon_class:
                     details['phone'] = text
                 elif 'fa-clock-o' in icon_class:
                     details['work_hours'] = text
@@ -196,11 +196,10 @@ class TibbiPortalScraper:
             tasks = [self.scrape_page(page_num, end_page) for page_num in batch_pages]
             await asyncio.gather(*tasks)
 
-            # Save progress after each batch
-            self.save_to_csv(f'doctors_data_progress_page_{batch_end}.csv')
+            # Display progress
             elapsed = (datetime.now() - start_time).total_seconds()
             rate = len(self.doctors_data) / elapsed if elapsed > 0 else 0
-            print(f"\n✓ Progress saved: {len(self.doctors_data)} doctors scraped")
+            print(f"\n✓ Progress: {len(self.doctors_data)} doctors scraped")
             print(f"  Time elapsed: {elapsed:.1f}s | Rate: {rate:.1f} doctors/sec")
 
             # Small delay between batches
