@@ -1,0 +1,13 @@
+TibbiPortal.az Data Analysis Summary
+==================================================
+
+Total Records: 2146
+Total Doctors: 2136
+Total Medical Centers: 10
+Unique Specialties: 129
+Total Likes: 10778
+Average Likes per Doctor: 5.05
+Max Likes (Single Doctor): 404
+Doctors with 0 Likes: 793
+Doctors with Work Hours: 1137
+Doctors with Workplace Info: 0
